@@ -3,7 +3,7 @@
 
 ## Initial Stock Market Data:
 
- ![Before](https://user-images.githubusercontent.com/60836219/93963142-414c1d00-fd11-11ea-847a-f0f196387ea8.PNG)
+![Before](https://user-images.githubusercontent.com/60836219/93963142-414c1d00-fd11-11ea-847a-f0f196387ea8.PNG)
 
 ### Project Background:
 I was provided with a stock market data containing multiple years. In each of the years it contains multiple ticker names, dates, open prices, high prices, low prices, close prices, and volumes. My task was to create a summary table for each ticker name and find the yearly change, percent change, and total stock volume so the investor could easily see how each ticker name performed in a year. Another tasked that was asked for but not required was to create a summary table of the ticker who had the greatest percentage increase, greatest percentage decrease, and greatest total volume. It was also asked to include the value for those 3 tickers.
@@ -17,5 +17,6 @@ Solution to this project:
 
 #### Final Stock Market Data for the years 2014-2016:
  
+![Year 2016 Screenshot](https://user-images.githubusercontent.com/60836219/93963265-8b350300-fd11-11ea-9a2f-646bcdd9b0d0.PNG)
 
 ##### VBA Code:
