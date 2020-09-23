@@ -112,13 +112,13 @@ Sub Testing_Workbook():
                 ws.Range("J" & Summary_Table_Row).Value = Yearly_Change
                 
                 'Checking if yearly change is greater than zero to select highlight color
-                If (Yearly_Change > 0) Then
+                If (Yearly_Change >= 0) Then
                 
                     'Setting the highlight color to green which means there is a posivite change
                     ws.Range("J" & Summary_Table_Row).Interior.ColorIndex = 4
                     
                 'Checking if yearly change is greater than zero to select highlight color
-                ElseIf (Yearly_Change <= 0) Then
+                ElseIf (Yearly_Change < 0) Then
                 
                     'Setting the highlight color to red which means there is a negative change or no change at all
                     ws.Range("J" & Summary_Table_Row).Interior.ColorIndex = 3
