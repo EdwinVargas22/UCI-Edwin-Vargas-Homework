@@ -9,7 +9,7 @@ total_months = []
 total_profit = []
 average_change = []
 
-# Read in the CSV file
+# Open the CSV file
 with open(budget_data_csv) as csvfile:
 
     # It will split the data on commas
