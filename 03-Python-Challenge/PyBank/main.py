@@ -39,7 +39,6 @@ greatest_decrease_profit = min(average_change)
 greatest_increase_month = average_change.index(max(average_change)) + 1
 greatest_decrease_month = average_change.index(min(average_change)) + 1
 
-
 # Print out the Summary Table
 print("Financial Analysis")
 print("----------------------------")

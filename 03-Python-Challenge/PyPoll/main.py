@@ -11,7 +11,6 @@ correy_votes = 0
 li_votes = 0
 otooley_votes = 0
 
-
 # Open the CSV file
 with open(election_data_csv) as csvfile:
 
@@ -57,14 +56,15 @@ correy_percentage_votes_won = (correy_votes/total_votes) * 100
 li_percentage_votes_won = (li_votes/total_votes) * 100
 otooley_percentage_votes_won = (otooley_votes/total_votes) * 100
 
+# Created a candidates and votes list
 candidates = ["Khan", "Correy", "Li", "O'Tooley"]
 votes = [khan_votes, correy_votes, li_votes, otooley_votes]
 
+# Zip the list together and created a dictinoary from it
 candidates_votes = dict(zip(candidates, votes))
 
+# Found the popular vote winner by using the max function of the dictionary
 key = max(candidates_votes, key=candidates_votes.get)
-
-
 
 # Printing out Summary Table
 print("Election Results")
@@ -79,10 +79,13 @@ print("--------------------------")
 print(f"Winner: {key}")
 print("--------------------------")
 
+# Path to text file
 results_text = os.path.join('Election Results.txt')
 
+# Open the text file to write in
 with open(results_text, 'w') as file:
     
+    # Write down the Summary Table that will show up in the text file
     file.write("Election Results")
     file.write("\n")
     file.write("---------------------")
