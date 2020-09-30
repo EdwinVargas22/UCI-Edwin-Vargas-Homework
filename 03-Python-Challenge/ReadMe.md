@@ -25,9 +25,11 @@ These are the general steps I took to find what I was asked for:
 8. Printed the summary talbe out
 9. Created a path to a text file to export my summary table 
 
+#### Results
 
+![PyBank Results](https://user-images.githubusercontent.com/60836219/94640894-af09c300-0294-11eb-927a-4709bb08f5de.PNG)
 
-
+These are the results I got when I ran my Python script. 
 
 ### PyPoll
 ![ballot-box-WEB](https://user-images.githubusercontent.com/60836219/94639378-e5454380-0290-11eb-88f9-38e8d399b34e.jpg)
