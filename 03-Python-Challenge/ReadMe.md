@@ -65,3 +65,5 @@ These are the general steps I took to find what I was asked for:
 
 These are the results I got when I ran my Python script.
 
+
+Python - Visual Studio Code - Git Bash - Conda Activate - Imported OS - Imported CSV
