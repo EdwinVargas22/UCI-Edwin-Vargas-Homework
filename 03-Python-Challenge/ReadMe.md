@@ -10,3 +10,4 @@
 
 
 ### PyPoll
+![ballot-box-WEB](https://user-images.githubusercontent.com/60836219/94639378-e5454380-0290-11eb-88f9-38e8d399b34e.jpg)
