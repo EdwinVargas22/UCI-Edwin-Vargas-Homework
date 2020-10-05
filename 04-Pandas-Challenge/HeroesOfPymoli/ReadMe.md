@@ -1,10 +1,10 @@
 # Heroes of Pymolie
 ![fantasy-landscape-art-artwork-nature-scenery](https://user-images.githubusercontent.com/60836219/95040129-a3990c00-0687-11eb-8532-0452e1f650af.jpg)
 
-## Player Count
+ Player Count { font-size: 18; }
 
 
-### Purchasing Analysis (Total)
+ Purchasing Analysis (Total)
 
 
 
