@@ -7,7 +7,7 @@ My task for the independent gamming company who just recently released Heroes of
 
 In order to begin working on this task you will need to open up your jupyter notebook, import pandas, reference the CSV file, and store it into a Panda DataFrame
 
-Player Count
+#### Player Count
 
 * To find the total number of players who play this game I first had to use the drop_duplicates() function on the DataFrame so I don't count duplicate players more than once
 * Then you count the total number of players and set it to a Summary DataFrame to display it
