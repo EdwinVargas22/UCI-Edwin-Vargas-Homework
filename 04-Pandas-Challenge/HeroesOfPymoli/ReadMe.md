@@ -66,7 +66,7 @@ In order to begin working on this task you will need to open up your jupyter not
 * Use the count(), mean(), and sum() function
 * I then created a Summary DataFrame to display it but before you could display it, you need to use the map() function on two columns that will display dollar amounts
 
-![Top Spenders](https://user-images.githubusercontent.com/60836219/95040273-025e8580-0688-11eb-8fdd-b68ce69ae20e.PNG)
+![Top Spenders](https://user-images.githubusercontent.com/60836219/95285889-bb52ca80-0816-11eb-9273-8bfb1ae0fe3d.PNG)
 
 ### Most Popular Items
 
@@ -76,18 +76,15 @@ In order to begin working on this task you will need to open up your jupyter not
 * I then created a Summary DataFrame to display it but before you could display it, you need to use the map() function on two columns that will display dollar amount
 * To sort the "Purchase Count" column in descending order you need to use the sort_values() function and set ascending=False
 
-![Most Popular Items](https://user-images.githubusercontent.com/60836219/95040281-05597600-0688-11eb-857f-9dbe361a7bc2.PNG)
+![Most Popular Items](https://user-images.githubusercontent.com/60836219/95285896-be4dbb00-0816-11eb-990c-72c0058036b2.PNG)
 
 ### Most Profitable Items
 
 * Use the same Summary DataFrame that was used above but instead sort the "Total Purchase Value" column in descending order by using the sort_values() function and set ascending=False
 
-![Most Profitable Items](https://user-images.githubusercontent.com/60836219/95040283-08546680-0688-11eb-96dc-c4d524891503.PNG)
+![Most Profitable Items](https://user-images.githubusercontent.com/60836219/95285904-c148ab80-0816-11eb-9ce1-ddfd7f994c36.PNG)
 
 ## Trends
 
 I was able to see these three trends viewing the Purchasing Analysis (Gender) and Purchasing Analysis (Age) DataFrames. I've noticed usually the group who's average purchase price is the highest means this group will also have the highest average total purchase per person. The other trend is the group who has the highest total purchase value does not necessarily mean they will have highest average purchase price and average total purchase per person. The last trend I noticed is usually the group with the highest purchase count will have the highest total purchase value.
-
-
-
 
