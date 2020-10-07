@@ -7,14 +7,14 @@ My task for the independent gamming company who just recently released Heroes of
 
 In order to begin working on this task you will need to open up your jupyter notebook, import pandas, reference the CSV file, and store it into a Panda DataFrame
 
-#### Player Count
+### Player Count
 
 * To find the total number of players who play this game I first had to use the drop_duplicates() function on the DataFrame so I don't count duplicate players more than once
 * Then you count the total number of players and set it to a Summary DataFrame to display it
 
 ![Players Count](https://user-images.githubusercontent.com/60836219/95040137-a8f65680-0687-11eb-8f2d-d640e7992730.PNG)
 
-Purchasing Analysis (Total)
+### Purchasing Analysis (Total)
 
 * To find the number of unique items I used the len() and unique() function on the DataFrame
 * To find the average price I used the mean() function on the DataFrame
@@ -24,14 +24,14 @@ Purchasing Analysis (Total)
 
 ![Purchasing Analysis (Total)](https://user-images.githubusercontent.com/60836219/95040167-be6b8080-0687-11eb-8328-9e4f87784655.PNG)
 
-Gender Demographics
+### Gender Demographics
 * To find the amount of players per gender I needed to use the DataFrame that has the duplicates removed and then I used the value_counts() function on the DataFrame
 * To find the percentage of players per gender I used the value_counts(normalize=True) function on the DataFrame then times it by 100
 * I then created a Summary DataFrame to display it but before you could display it, you need to use the map() function on the column that will display the percentage amount
 
 ![Gender Demographics](https://user-images.githubusercontent.com/60836219/95040198-cfb48d00-0687-11eb-9f10-f5d89325c1d1.PNG)
 
-Purchasing Analysis (Gender)
+### Purchasing Analysis (Gender)
 
 * First you need to use the groupby() function on the DataFrame
 * Then you use the count(), mean(), and sum() function on the grouped DataFrame
@@ -40,7 +40,7 @@ Purchasing Analysis (Gender)
 
 ![Purchasing Analysis (Gender)](https://user-images.githubusercontent.com/60836219/95040208-d9d68b80-0687-11eb-804f-57cfd2f56357.PNG)
 
-Age Demographics 
+### Age Demographics 
 
 * First need to create bins for the ages and create names for the bins
 * Then used the pd.cut() function to add the bins and names of the bins to the DataFrame
@@ -50,7 +50,7 @@ Age Demographics
 
 ![Age Demographics](https://user-images.githubusercontent.com/60836219/95040261-fa064a80-0687-11eb-947f-31ba32e5e082.PNG)
 
-Purchasing Analysis (Age)
+### Purchasing Analysis (Age)
 
 * First use the pd.cut() function to add the bins and names of the bins to the DataFrame
 * Then use the groupby() function on the names of the bins
@@ -60,7 +60,7 @@ Purchasing Analysis (Age)
 
 ![Purchasing Analysis (Age)](https://user-images.githubusercontent.com/60836219/95040265-fd99d180-0687-11eb-86fd-9660d9eb4b5a.PNG)
 
-Top Spenders
+### Top Spenders
 
 * Use the groupby() function on the "SN" column
 * Use the count(), mean(), and sum() function
@@ -68,7 +68,7 @@ Top Spenders
 
 ![Top Spenders](https://user-images.githubusercontent.com/60836219/95040273-025e8580-0688-11eb-8fdd-b68ce69ae20e.PNG)
 
-Most Popular Items
+### Most Popular Items
 
 * Create a new DataFrame only keeping the "Item ID", "Item Name", and "Price" columns
 * Use the groupby() function on the "Item ID" and "Item Name" columns
@@ -78,7 +78,7 @@ Most Popular Items
 
 ![Most Popular Items](https://user-images.githubusercontent.com/60836219/95040281-05597600-0688-11eb-857f-9dbe361a7bc2.PNG)
 
-Most Profitable Items
+### Most Profitable Items
 
 * Use the same Summary DataFrame that was used above but instead sort the "Total Purchase Value" column in descending order by using the sort_values() function and set ascending=False
 
