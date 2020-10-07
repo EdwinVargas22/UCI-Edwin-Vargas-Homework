@@ -91,5 +91,5 @@ In order to begin working on this task you will need to open up your jupyter not
 
 ### Trends
 
-I was able to see these three trends viewing the Purchasing Analysis (Gender) and Purchasing Analysis (Age) DataFrames. I've noticed usually the group who's average purchase price is the highest means this group will also have the highest average total purchase per person. The other trend is the group who has the highest total purchase value does not necessarily mean they will have highest average purchase price and average total purchase per person. The last trend I noticed is the top two most popular items are also the top two most profitable items.
+The first trend I noticed viewing the Purchasing Analysis (Gender) and Purchasing Analysis (Age) DataFrames is usually the group who's average purchase price is the highest means this group will also have the highest average total purchase per person. The other trend is the group who has the highest total purchase value does not necessarily mean they will have highest average purchase price and average total purchase per person. The last trend I noticed is the top two most popular items are also the top two most profitable items.
 
