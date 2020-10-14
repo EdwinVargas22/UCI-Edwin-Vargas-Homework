@@ -35,3 +35,13 @@ As a senior data analyst at the company, you've been given access to the complet
 - Calculate the correlation coefficient and linear regression model between mouse weight and average tumor volume for the Capomulin treatment. Plot the linear regression model on top of the previous scatter plot.
 
 - Look across all previously generated figures and tables and write at least three observations or inferences that can be made from the data. Include these observations at the top of notebook.
+
+## Observation
+
+One observation I noticed is the company drug Capomulin has the smallest average tumor and median tumor which is telling us this drug does a better job at decreasing the tumor compared to the other drug treatments available. 
+
+The second observation I made is from the boxplot Ramicane has the smallest final tumor volume compared to the other three drug regimens.
+
+The third observation I noticed is, there is slightly a larger male population versus the female population by 1.0% which isn't a large difference. We could pretty much conclude the male population to female population is relatively equal.
+
+The fourth observation I noticed in the scatter plot is that if the mice weight more then the average tumor volume will also be larger. This means there is a positive correlation between weight and average tumor volume.
