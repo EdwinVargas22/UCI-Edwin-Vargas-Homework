@@ -8,7 +8,7 @@ Now, we know what you may be thinking: _"Duh. It gets hotter..."_
 
 But, if pressed, how would you **prove** it?
 
-![Equator](Images/equatorsign.png)
+![World-map-red-line-Equator](https://user-images.githubusercontent.com/60836219/96678172-00eab980-1326-11eb-8307-0c8c6131cd47.jpg)
 
 ### Before You Begin
 
