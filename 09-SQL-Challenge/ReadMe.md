@@ -10,3 +10,5 @@ I will need to design the tables to hold data in the CSVs, import the CSVs into 
 2. Data Analysis
 ### Data Modeling
 First inspect the CSVs and sketch out an ERD of the tables.
+![ERD ](https://user-images.githubusercontent.com/60836219/98505645-7b647600-220e-11eb-9296-4eb7622f6a56.png)
+### Data Engineering
