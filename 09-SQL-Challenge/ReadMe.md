@@ -13,6 +13,7 @@ First inspect the CSVs and sketch out an ERD of the tables.
 ![ERD ](https://user-images.githubusercontent.com/60836219/98505645-7b647600-220e-11eb-9296-4eb7622f6a56.png)
 ### Data Engineering
 * Use the information you have to create a table schema for each of the six CSV files. Remember to specify data types, primary keys, foreign keys, and other constraints.
+
 * Import each CSV file into the corresponding SQL table.
 ### Data Analysis
 Once there is a complete database, do the following:
