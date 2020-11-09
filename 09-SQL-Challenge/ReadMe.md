@@ -8,3 +8,5 @@ I will need to design the tables to hold data in the CSVs, import the CSVs into 
 1. Data Engineering
 
 2. Data Analysis
+### Data Modeling
+First inspect the CSVs and sketch out an ERD of the tables.
