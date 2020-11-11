@@ -42,3 +42,4 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 ![Most Common Salary ranges for Employees](https://user-images.githubusercontent.com/60836219/98775158-63712b80-23a1-11eb-8c0b-4896c79bcda7.png)
 
 3. Create a bar chart of average salary by title.
+![Average Salary by Title](https://user-images.githubusercontent.com/60836219/98775199-813e9080-23a1-11eb-9f0d-d0d60250ee8d.png)
