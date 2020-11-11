@@ -39,5 +39,6 @@ As you examine the data, you are overcome with a creeping suspicion that the dat
 1. Import the SQL database into Pandas.
 
 2. Create a histogram to visualize the most common salary ranges for employees.
+![Most Common Salary ranges for Employees](https://user-images.githubusercontent.com/60836219/98775158-63712b80-23a1-11eb-8c0b-4896c79bcda7.png)
 
 3. Create a bar chart of average salary by title.
