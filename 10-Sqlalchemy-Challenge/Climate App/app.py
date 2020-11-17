@@ -123,7 +123,9 @@ def tobs():
 @app.route("/api/v1.0/<start>")
 def start(start):
 
-    start_date_data = session.query(Measurement.station, func.min(Measureme.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\
+    
+
+    start_date_data = session.query(Measurement.station, func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\
         filter(Measurement.date >= start).\
         group_by(Measurement.station).\
         order_by(Meausrement.date).all()
@@ -133,6 +135,12 @@ def start(start):
 
 
 @app.route("/api/v1.0/<start>/<end>")
+def start_end(start, end):
+
+    start_date_data = session.query(Measurement.station, func.min(Measurement.tobs), func.max(Measurement.tobs), func.avg(Measurement.tobs)).\
+        filter(Measurement.date >= start, Measurement.date < end).\
+        group_by(Measurement.station).\
+        order_by(Meausrement.date).all()
 
 if __name__ == '__main__':
     app.run(debug=True)
