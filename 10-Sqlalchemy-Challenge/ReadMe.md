@@ -1,5 +1,6 @@
 # Surfs Up!
 ![Hawaii](https://user-images.githubusercontent.com/60836219/99481944-1ac0f180-2910-11eb-9583-74c913129f4c.jpg)
+
 Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. 
 
 ## Climate Analysis and Exploration
@@ -15,7 +16,11 @@ You will be using Python and SQLAlchemy to do basic climate analysis and data ex
 * Sort the DataFrame values by date.
 * Plot the results using the DataFrame plot method.
 
+![Precipitation](https://user-images.githubusercontent.com/60836219/99484269-dbe16a80-2914-11eb-8d5c-9740471c8ded.png)
+
 * Use Pandas to print the summary statistics for the precipitation data.
+
+![Summary statistics](https://user-images.githubusercontent.com/60836219/99484201-bc4a4200-2914-11eb-8599-5cc5f8bae646.PNG)
 
 ### Station Analysis
 - Design a query to calculate the total number of stations.
@@ -26,6 +31,8 @@ You will be using Python and SQLAlchemy to do basic climate analysis and data ex
 - Design a query to retrieve the last 12 months of temperature observation data (TOBS).
   - Filter by the station with the highest number of observations.
   - Plot the results as a histogram with bins=12.
+  
+![Temperature](https://user-images.githubusercontent.com/60836219/99484270-ddab2e00-2914-11eb-9971-5899ea6b0130.png)
 
 ## Climate App
 Design a Flask API based on the queries that you have just developed.
@@ -51,5 +58,3 @@ Design a Flask API based on the queries that you have just developed.
 ## Hints
 * You will need to join the station and measurement tables for some of the queries.
 * Use Flask jsonify to convert your API data into a valid JSON response object.
-
-
