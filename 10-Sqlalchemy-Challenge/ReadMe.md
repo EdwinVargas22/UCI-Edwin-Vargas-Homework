@@ -15,9 +15,11 @@ You will be using Python and SQLAlchemy to do basic climate analysis and data ex
 * Load the query results into a Pandas DataFrame and set the index to the date column.
 * Sort the DataFrame values by date.
 * Plot the results using the DataFrame plot method.
+
 ![Precipitation](https://user-images.githubusercontent.com/60836219/99484269-dbe16a80-2914-11eb-8d5c-9740471c8ded.png)
 
 * Use Pandas to print the summary statistics for the precipitation data.
+
 ![Summary statistics](https://user-images.githubusercontent.com/60836219/99484201-bc4a4200-2914-11eb-8599-5cc5f8bae646.PNG)
 
 ### Station Analysis
@@ -29,6 +31,7 @@ You will be using Python and SQLAlchemy to do basic climate analysis and data ex
 - Design a query to retrieve the last 12 months of temperature observation data (TOBS).
   - Filter by the station with the highest number of observations.
   - Plot the results as a histogram with bins=12.
+  
 ![Temperature](https://user-images.githubusercontent.com/60836219/99484270-ddab2e00-2914-11eb-9971-5899ea6b0130.png)
 
 ## Climate App
