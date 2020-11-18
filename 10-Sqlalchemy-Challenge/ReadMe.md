@@ -1,5 +1,6 @@
 # Surfs Up!
 ![Hawaii](https://user-images.githubusercontent.com/60836219/99481944-1ac0f180-2910-11eb-9583-74c913129f4c.jpg)
+
 Congratulations! You've decided to treat yourself to a long holiday vacation in Honolulu, Hawaii! To help with your trip planning, you need to do some climate analysis on the area. 
 
 ## Climate Analysis and Exploration
