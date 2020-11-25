@@ -39,5 +39,5 @@ The website will consist of 7 pages in total, including:
  #### Data Page
  
  
- #### Visualization
+ #### Visualization Page
  
