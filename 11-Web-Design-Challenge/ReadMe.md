@@ -31,13 +31,16 @@ The website will consist of 7 pages in total, including:
  The images below are screenshots from my webpage for the different pages.
  
  #### Landing Page
- 
+ ![Landing Page](https://user-images.githubusercontent.com/60836219/100186304-a0a5e500-2e9a-11eb-814b-645094ceb5a8.PNG)
  
  #### Comparison Page
- 
+ ![Comparison Page](https://user-images.githubusercontent.com/60836219/100186314-a26fa880-2e9a-11eb-86ab-0c1d4736f587.PNG)
  
  #### Data Page
- 
+ ![Data Page](https://user-images.githubusercontent.com/60836219/100186317-a3a0d580-2e9a-11eb-88d0-93aeec6cf2a5.PNG)
  
  #### Visualization Page
+ ![Visualization Page](https://user-images.githubusercontent.com/60836219/100186323-a56a9900-2e9a-11eb-8dd9-60429b2a78ae.PNG)
+
+ 
  
