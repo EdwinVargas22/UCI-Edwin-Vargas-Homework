@@ -12,7 +12,7 @@ def init_browser():
 
 def scrape():
     browser = init_browser()
-    mars_dictionary = {}
+    mars = {}
 
     # Mars news title and paragraph to be scarped
     news_url = 'https://mars.nasa.gov/news/'
@@ -22,9 +22,9 @@ def scrape():
     html = browser.html
     news_soup = BeautifulSoup(html, 'html.parser')
 
-    main_slide = news_soup.find('div', class_="slide")
-    mars_dictionary["news_title"] = main_slide.find('div', class_="content_title").get_text()
-    mars_dictionary["news_paragraph"] = main_slide.find('div', class_="rollover_description_inner").get_text()
+    article = news_soup.find('div', class_="list_text")
+    mars["news_title"] = article.find('div', class_="content_title").text
+    mars["news_paragraph"] = article.find('div', class_="article_teaser_body").text
 
     # Mars Featured Image
     featured_url = 'https://www.jpl.nasa.gov/spaceimages/?search=&category=Mars'
@@ -44,7 +44,7 @@ def scrape():
         picture_image.append(picture)
 
     
-    mars_dictionary["featured_image_url"] = 'https://www.jpl.nasa.gov' + picture
+    mars["featured_image_url"] = 'https://www.jpl.nasa.gov' + picture
 
     # Mars Facts Table
     facts_url = 'https://space-facts.com/mars/'
@@ -55,13 +55,13 @@ def scrape():
 
     df.columns = ["Facts", "Value"]
 
-    clean_table = df.set_index(["Facts"])
+    clean_table = df.set_index("Facts")
 
     facts_value_html_table = clean_table.to_html()
 
     facts_value_html_table = facts_value_html_table.replace('\n', '')
 
-    mars_dictionary["mars_fact_table"] = facts_value_html_table
+    mars["mars_fact_table"] = facts_value_html_table
 
     # Mars Hemispheres
     url = 'https://astrogeology.usgs.gov/search/results?q=hemisphere+enhanced&k1=target&v1=Mars'
@@ -86,9 +86,9 @@ def scrape():
         
         browser.back()
 
-    mars_dictionary["Mars Hemispheres"] = hemispheres_titles_images
+    mars["Mars_Hemispheres"] = hemispheres_titles_images
 
-    return mars_dictionary
+    return mars
 
 
 

@@ -18,62 +18,46 @@
 
     <div class="jumbotron text-center border-bottom">
       <h1 class="font-weight-bold">Mission to Mars</h1>
-      <p><a class="btn btn-primary btn-lg" href="../scrape" role="button">Scrape New Data</a></p>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
     </div>
 
     <div class="row">
       <div class="col-md-12">
-        <h2><u>Latest Mars News</u></h2>
-      </div>
-    </div>
-  </br>
-    <div class="row">
-      <div class="col-md-12">
+        <h2>Latest Mars News</h2>
         <h4>{{mars.news_title}}</h4>
-        <p>{{mars.news_p}}</p>
+        <p>{{mars.news_paragraph}}</p>
       </div>
     </div>
   <hr>
     <div class="row">
-      <div class="col-md-8 border">
-        <h2 class=""><u>Featured Mars Image</u></h2> 
-        </br>
-        <img src="{{mars.featured_image_url}}" alt="Features Mars Image">
-      </div>
-      <div class="col-md-4">
-        <div class="border">
-          </br>
-          <h5>Current Weather on Mars</h5>
-          {{mars.mars_weather}}
+        <div class="col-md-8">
+            <h2>Featured Mars Image</h2> 
+            </br>
+            <picture>
+                <img src="{{mars.featured_image_url}}" alt="Features Mars Image">
+            </picture>
         </div>
-        </br>
-        <div class="border">
-          <h5>Mars Facts</h5>
-            {{ mars.fact_table | safe }}
+        <div class="col-md-4">
+                <h5>Mars Facts</h5>
+                <table>{{mars.mars_fact_table|safe}}</table
         </div>
-      </div>
     </div>
   <hr>
     <div class="row">
+      <br>
       <div class="col-md-8 offset-4">
-        <h2 class="align-items-center"><u>Mars hemispheres</u></h2>  
+        <h2 class="align-items-center">Mars hemispheres</h2>  
       </div>
     </div>
     </br>
     <div class="row">       
-            {% for hemisphere in mars.hemisphere_images %} 
-              <div class="col-6 border">
+              <div class="col-md-6 border">
               </br>
                     <div>
-                      <img width="512 px" height="512 px" src="{{ hemisphere.img_url | safe }}">
-                    </div>
-
-                    <div>
-                      <h4> {{ hemisphere.title | safe }} </h4>  
+                      <img width="512 px" height="512 px" src="{{mars.Mars_Hemispheres}}">
                     </div>
             
               </div>
-            {% endfor %}
     </div> 
 
   <hr>
