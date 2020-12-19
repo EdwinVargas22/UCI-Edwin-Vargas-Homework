@@ -15,7 +15,9 @@ You can handle this... right? The planet Earth needs to know what we have found!
 - Using the UFO dataset provided in the form of an array of JavaScript objects, write code that appends a table to your webpage and then add new rows of data for each UFO sighting.
   - Make sure the columns in your table have date/time, city, state, country, shape, and comment.
 - Use a date form in your HTML document and write JavaScript code that will listen for events and search through the date/time column to find rows that match user input. 
+![Level 1](https://user-images.githubusercontent.com/60836219/102682357-ccf11080-417d-11eb-8202-e62b52a4aea0.PNG)
 
 ### Level 2: Multiple Search Categories
 - You may begin level 2 once you are done with level 1.
 - Using multiple input tags and/or select dropdowns, write JavaScript code so the user can set multiple filters and search for UFO sightings.
+![Level 2](https://user-images.githubusercontent.com/60836219/102682359-cf536a80-417d-11eb-9e78-ab6e39618f68.PNG)
