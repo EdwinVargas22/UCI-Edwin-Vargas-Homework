@@ -1,10 +1,10 @@
 var svgWidth = 960;
-var svgHeight = 500;
+var svgHeight = 600;
 
 var margin = {
-    top: 20,
+    top: 10,
     right: 40,
-    bottom: 60,
+    bottom: 100,
     left: 100
 };
 
@@ -144,7 +144,7 @@ d3.csv("data.csv").then(function(usCensus, err) {
             return xLinearScale(d[chosenXAxis]);
         })
         .attr("y", function(d) {
-            return yLinearScale(d.healthcare);
+            return yLinearScale(d[chosenYAxis]);
         })
         .text(function(d) {
             return d.abbr;
@@ -160,8 +160,8 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
     var healthcareLabel = yLabelsGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x", -210)
+        .attr("y", margin.left -230)
+        .attr("x", -260)
         .attr("value", "healthcare")
         .attr("dy", "1em")
         .classed("active", true)
@@ -169,8 +169,8 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
     var smokesLabel = yLabelsGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x", -230)
+        .attr("y", margin.left - 210)
+        .attr("x", -260)
         .attr("value", "smokes")
         .attr("dy", "1em")
         .classed("inactive", true)
@@ -178,8 +178,8 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
     var obesityLabel = yLabelsGroup.append("text")
         .attr("transform", "rotate(-90)")
-        .attr("y", 0 - margin.left)
-        .attr("x", -250)
+        .attr("y", margin.left - 190)
+        .attr("x", -260)
         .attr("value", "obesity")
         .attr("dy", "1em")
         .classed("inactive", true)
@@ -188,25 +188,25 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
     // Create group for three x-axis labels
     var xLabelsGroup = chartGroup.append("g")
-        .attr("transform", `translate(${width / 2}, ${height + 20})`);
+        .attr("transform", `translate(${width / 2}, ${height + 5})`);
 
     var povertyLabel = xLabelsGroup.append("text")
         .attr("x", 0)
-        .attr("y", 20)
+        .attr("y", margin.bottom - 65)
         .attr("value", "poverty")
         .classed("active", true)
         .text("In Poverty (%)");
 
     var ageLabel = xLabelsGroup.append("text")
         .attr("x", 0)
-        .attr("y", 40)
+        .attr("y", margin.bottom - 45)
         .attr("value", "age")
         .classed("inactive", true)
         .text("Age (Median)");
 
     var incomeLabel = xLabelsGroup.append("text")
         .attr("x", 0)
-        .attr("y", 60)
+        .attr("y", margin.bottom - 25)
         .attr("value", "income")
         .classed("inactive", true)
         .text("Household Income (Median)");
