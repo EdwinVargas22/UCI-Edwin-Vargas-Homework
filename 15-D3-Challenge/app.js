@@ -67,24 +67,39 @@ function renderYAxes(newYScale, yAxis) {
     return yAxis;
 }
 
-// function used for updating circles group with a transition to new circles for x-axis
-function renderCircles(circlesGroup, newXScale, chosenXAxis) {
+// function used for updating circles group with a transition to new circles for x-axis and y-axis
+function renderCircles(circlesGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
 
     circlesGroup.transition()
         .duration(1000)
-        .attr("cx", d => newXScale(d[chosenXAxis]));
+        .attr("cx", d => newXScale(d[chosenXAxis]))
+        .attr("cy", d => newYScale(d[chosenYAxis]));
+
 
     return circlesGroup;
 }
 
 // function used for updating circles group with a transition to new circles for y-axis
-function renderYCircles(circlesGroup, newYScale, chosenYAxis) {
+// function renderYCircles(circlesGroup, newYScale, chosenYAxis) {
 
-    circlesGroup.transition()
-    .duration(1000)
-    .attr("cy", d => newYScale(d[chosenYAxis]));
+//     circlesGroup.transition()
+//     .duration(1000)
+//     .attr("cy", d => newYScale(d[chosenYAxis]))
 
-    return circlesGroup;
+
+//     return circlesGroup;
+// }
+
+// function used for updating text group with a transition to new text
+function renderText(textGroup, newXScale, chosenXAxis, newYScale, chosenYAxis) {
+
+    textGroup.transition()
+        .duration(1000)
+        .attr("x", d => newXScale(d[chosenXAxis]))
+        .attr("y", d => newYScale(d[chosenYAxis]))
+        .attr("text-anchor", "middle");
+    
+    return textGroup;
 }
 
 
@@ -121,38 +136,48 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
     // append y axis
     var yAxis = chartGroup.append("g")
-        // .classed("y-axis", true)
-        // .attr("transform", `translate(${width}, 0)`)
+        .classed("y-axis", true)
         .call(leftAxis);
 
     // append initial circles
-    var circlesGroup = chartGroup.selectAll("circle")
+    var circlesGroup = chartGroup.selectAll("stateCircle")
     .data(usCensus)
     .enter()
     .append("circle")
     .attr("cx", d => xLinearScale(d[chosenXAxis]))
     .attr("cy", d => yLinearScale(d[chosenYAxis]))
+    .attr("class", "stateCircle")
     .attr("r", "12")
     .attr("fill", "blue")
     .attr("opacity", ".5");
 
     // append abbreviation
-    var circleLabels = chartGroup.selectAll(null).data(usCensus).enter().append("text");
-
-    circleLabels
-        .attr("x", function(d) {
-            return xLinearScale(d[chosenXAxis]);
-        })
-        .attr("y", function(d) {
-            return yLinearScale(d[chosenYAxis]);
-        })
-        .text(function(d) {
-            return d.abbr;
-        })
-        .attr("font-family", "sans-serif")
+    var textGroup = chartGroup.selectAll("stateText")
+        .data(usCensus)
+        .enter()
+        .append("text")
+        .attr("x", d => xLinearScale(d[chosenXAxis]))
+        .attr("y", d => yLinearScale(d[chosenYAxis]))
+        .text(d => (d.abbr))
+        .attr("class", "stateText")
         .attr("font-size", "10px")
         .attr("text-anchor", "middle")
         .attr("fill", "white");
+
+    // circleLabels
+    //     .attr("x", function(d) {
+    //         return xLinearScale(d[chosenXAxis]);
+    //     })
+    //     .attr("y", function(d) {
+    //         return yLinearScale(d[chosenYAxis]);
+    //     })
+    //     .text(function(d) {
+    //         return d.abbr;
+    //     })
+    //     .attr("font-family", "sans-serif")
+    //     .attr("font-size", "10px")
+    //     .attr("text-anchor", "middle")
+    //     .attr("fill", "white");
 
     // Create group for three y-axis labels
     var yLabelsGroup = chartGroup.append("g")
@@ -222,8 +247,6 @@ d3.csv("data.csv").then(function(usCensus, err) {
                 // replaces chosenYAxis with value
                 chosenYAxis = yValue;
 
-                console.log(chosenYAxis);
-
                 // function here found above csv import
                 // updates y scale for new data
                 yLinearScale = yScale(usCensus, chosenYAxis);
@@ -231,8 +254,11 @@ d3.csv("data.csv").then(function(usCensus, err) {
                 // updates y axis with transition
                 yAxis = renderYAxes(yLinearScale, yAxis);
 
-                // updates circles with new y values
-                circlesGroup = renderYCircles(circlesGroup, yLinearScale, chosenYAxis);
+                // updates circles with new values
+                circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis ,yLinearScale, chosenYAxis);
+
+                // updates text with new values
+                textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
                 // changes classes to change bold text
                 if (chosenYAxis === "healthcare") {
@@ -281,9 +307,7 @@ d3.csv("data.csv").then(function(usCensus, err) {
 
                 // replaces chosenXAxis with value
                 chosenXAxis = value;
-
-                console.log(chosenXAxis);
-
+                
                 // function here found above csv import
                 // updates x scale for new data
                 xLinearScale = xScale(usCensus, chosenXAxis);
@@ -291,8 +315,11 @@ d3.csv("data.csv").then(function(usCensus, err) {
                 // updates x axis with transition
                 xAxis = renderXAxes(xLinearScale, xAxis);
 
-                // updates circles with new x values
-                circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis);
+                // updates circles with new values
+                circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
+
+                // updates text with new values
+                textGroup = renderText(textGroup, xLinearScale, chosenXAxis, yLinearScale, chosenYAxis);
 
                 // changes classes to change bold text
                 if (chosenXAxis === "age") {
