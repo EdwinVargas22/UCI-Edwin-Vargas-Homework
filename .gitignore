@@ -10,3 +10,6 @@ Resources/
 # Database Config file
 #
 *databaseconfig.py
+# Config js file
+# 
+*config.js
