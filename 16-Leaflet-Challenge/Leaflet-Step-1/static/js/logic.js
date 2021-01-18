@@ -2,100 +2,69 @@
 var myMap = L.map("mapid", {
     center: [37.09, -95.71],
     zoom: 5
-  });
+});
 
 // Earthquakes GeoJSON URL 
 var earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson"
   
-  // Create the tile layer that will be the background of our map
-   var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
-    attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
+// Create the tile layer that will be the background of our map
+var lightmap = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
+    attribution: "Map data &copy; <a href=\"https://www.openstreetmap.org/\">OpenStreetMap</a> contributors, <a href=\"https://creativecommons.org/licenses/by-sa/2.0/\">CC-BY-SA</a>, Imagery © <a href=\"https://www.mapbox.com/\">Mapbox</a>",
     tileSize: 512,
     maxZoom: 18,
     zoomOffset: -1,
     id: "light-v10",
     accessToken: API_KEY
-  }).addTo(myMap);
+}).addTo(myMap);
 
+// Set Up Legend
+var legend = L.control({ 
+    position: "bottomright" 
+});
 
+// Add the layer control, insert a div with the class of "legend"
+legend.onAdd = function() {
+    var div = L.DomUtil.create("div", "legend"),
+    return div;
+};
+
+// Add the legend to the map
+legend.addTo(myMap);
 
   // Perform an API call to the all earthquakes data
-  d3.json(earthquakesURL, function(earthquakeData) {
+d3.json(earthquakesURL, function(earthquakeData) {
+    var quakeProperty  = earthquakeData.features.properties;
+    var quakeGeo  = earthquakeData.features.geometry;
 
-    // Function to determine the size of the marker based on the magnitude of the earthquake
-    function markerSize(magnitude) {
-        
-        if (magnitude === 0) {
-            return 1;
-        }
-        return magnitude * 3;
+    // Loop through the earthquake data array
+    for (var i = 0; i < quakeGeo.length; i++) {
+
+    var color = "";
+    if (quakeGeo.coordinates[2] < 11) {
+        color = "green";
+    }
+    else if (quakeGeo.coordinates[2] >= 10 & quakeGeo.coordinates[2] <= 30) {
+        color = "light green";
+    }
+    else if (quakeGeo.coordinates[2] >= 30 & quakeGeo.coordinates[2] <= 50) {
+        color = "light orange";
+    }
+    else if (quakeGeo.coordinates[2] >= 50 & quakeGeo.coordinates[2] <= 70) {
+        color = "orange";
+    }
+    else if (quakeGeo.coordinates[2] >= 70 & quakeGeo.coordinates[2] <= 90) {
+        color = "dark orange";
+    }
+    else {
+        color = "red";
     }
 
-    // Function to determine the style of the marker based on the magnitude of the earthquake
-    function styleInfo(feature) {
-
-        return {
-            opacity: 1,
-            fillOpacity: 1,
-            fillColor: chooseColor(feature.properties.mag),
-            color: "#000000",
-            radius: markerSize(feature.properties.mag),
-            stroke: true,
-            weight: 0.5
-        };
+    L.circle((time?), quakeGeo.coordinates[1, 0], {
+        fillOpacity: 0.75,
+        color: "white",
+        fillColor: color,
+    //     radius: quakeProperty.mag * 1000
+    // }).bindPopup(quakeProperty.title + "<br> Type: " + quakeProperty.type + "<br> Place: " + quakeProperty.place + "<br> Time: " + quakeProperty.time.format("h:mm:ss A") + "<br> Magnitude: " + quakeProperty.mag);
     }
-
-    // function to determine the color of the marker based on the magnitude of the earthquake
-    function chooseColor(magnitude) {
-        switch (true) {
-            case magnitude > 5:
-                return "#581845";
-            case magnitude > 4:
-                return "#900C3F";
-            case magnitude > 3:
-                return "#C70039";
-            case magnitude > 2:
-                return "#FF5733";
-            case magnitude > 1:
-                return "#FFC300";
-            default:
-                return "#DAF7A6";
-        }
-    }
-
-    // Create a GeoJSON layer containing the features array on the earthquakeData object
-    L.geoJSON(earthquakeData, {
-        poinToLayer: function(feature, latlng) {
-            return L.circleMarker(latlng);
-        },
-        style: styleInfo,
-
-        onEachFeature: function(feature, layer) {
-            layer.bindPopup("<h4>Location: " + feature.properties.place + 
-            "</h4><hr><p>Date & Time: " + new Date(feature.properties.time) +
-            "</p><hr><p>Magnitude: " + feature.properties.mag + "</p>")
-        }
-
-    }).addTo(myMap);
-
-
-    // Set Up Legend
-    var legend = L.control({ position: "bottomright" });
-    legend.onAdd = function() {
-        var div = L.DomUtil.create("div", "info legend"),
-        magnitudeLevels = [0, 1, 2, 3, 4, 5];
-
-        div.innerHTML += "<h3>Magnitude</h3>"
-
-        for (var i = 0; i < magnitudeLevels.length; i++) {
-            div.innerHTML +=
-
-                '<i style="background: ' + chooseColor(magnitudeLevels[i] + 1) + '"></i> ' +
-                magnitudeLevels[i] + (magnitudeLevels[i + 1] ? '&ndash;' + magnitudeLevels[i + 1] + '<br>' : '+');
-        }
-        return div;
-    };
-
-    // Add legend to the map
-    legend.addTo(myMap);
-  });
+  
+});
