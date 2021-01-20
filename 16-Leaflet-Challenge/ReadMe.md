@@ -18,7 +18,7 @@ The task is to visualize an earthquake data set.
 1. Get your data set
 ![02-Homework_16-Mapping-Web_Instructions_Images_4-JSON](https://user-images.githubusercontent.com/60836219/105133398-8d318780-5aa1-11eb-96df-f0df2faa2841.png)
 
-The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the USGS GeoJSON Feed page and pick a data set to visualize. When you click on a data set, for example 'All Earthquakes from the Past 7 Days', you will be given a JSON representation of that data. You will be using the URL of this JSON to pull in the data for our visualization.
+The USGS provides earthquake data in a number of different formats, updated every 5 minutes. Visit the [USGS GeoJSON Feed](https://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php) page and pick a data set to visualize. When you click on a data set, for example 'All Earthquakes from the Past 7 Days', you will be given a JSON representation of that data. You will be using the URL of this JSON to pull in the data for our visualization.
 
 ![02-Homework_16-Mapping-Web_Instructions_Images_4-JSON](https://user-images.githubusercontent.com/60836219/105133398-8d318780-5aa1-11eb-96df-f0df2faa2841.png)
 
