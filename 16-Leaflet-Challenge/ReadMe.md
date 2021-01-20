@@ -1,7 +1,7 @@
 # Visualizing Data with Leaflet
 
 ## Background
-[02-Homework_16-Mapping-Web_Instructions_Images_1-Logo](https://user-images.githubusercontent.com/60836219/105133400-8d318780-5aa1-11eb-89ae-4f9a46d137b0.png)
+![02-Homework_16-Mapping-Web_Instructions_Images_1-Logo (1)](https://user-images.githubusercontent.com/60836219/105134058-a8e95d80-5aa2-11eb-819f-70a2db278eef.png)
 
 Welcome to the United States Geological Survey, or USGS for short! The USGS is responsible for providing scientific data about natural hazards, the health of our ecosystems and environment; and the impacts of climate and land-use change. Their scientists develop new methods and tools to supply timely, relevant, and useful information about the Earth and its processes. As a new hire, you will be helping them out with an exciting new project!
 
