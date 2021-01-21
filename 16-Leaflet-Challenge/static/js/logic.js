@@ -4,8 +4,12 @@ var earthquakesURL = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/
 // Perform a GET request to the query URL
 d3.json(earthquakesURL, function (data) {
 
+    console.log("Hello");
+
     // Send the data.features object to the featureCreation function
     featureCreation(data.features);
+
+    console.log("bye");
 
 });
 
@@ -21,17 +25,18 @@ function featureCreation(creating) {
     // Define a function to run once for each feature in the features array
     // Give each feature the coordinates and radius for the circle 
     function circle(feature, coordinates) {
+        console.log(coordinates);
         return new L.circle(coordinates, {
             fillOpacity: 0.75,
             color: "white",
-            fillColor: color,
+            fillColor: "red",
             radius: feature.properties.mag * 1000
         })
     }
 
     // Create a GeoJSON layer containing the features array on the creating object
     var earthquake = L.geoJSON (creating, {
-        onEachFeature: addPopup, 
+        onEachFeature: addPopup,
         pointLayer: circle
     });
 
@@ -47,9 +52,11 @@ function mapCreation(earthquake) {
         tileSize: 512,
         maxZoom: 18,
         zoomOffset: -1,
-        id: "light-v10",
+        id: "mapbox/light-v10",
         accessToken: API_KEY
     });
+
+    console.log("heyy");
 
     // Create a map object, giving it the lightmap and earthquake layer to display on load
     var myMap = L.map("mapid", {
@@ -67,7 +74,7 @@ function mapCreation(earthquake) {
             d > 10 ? '#FD8D3C' :
             d > -10 ? '#FEB24C' :
                     '#FFEDA0' ;
-}
+    }
 
     // Set up the legend
     var legend = L.control({position: 'bottomright'});
