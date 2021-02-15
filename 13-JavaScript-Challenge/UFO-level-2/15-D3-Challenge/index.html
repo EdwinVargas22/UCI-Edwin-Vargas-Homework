@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>US Census Bureau and the Behavioral Risk Factor Surveillance System</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="d3Style.css">
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-md-12">
+        <h1 style="text-align: center">US Census Bureau and the Behavioral Risk Factor Surveillance System</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12  col-md-12">
+        <div id="scatter">
+          <!-- We append our chart here. -->
+        </div>
+      </div>
+    </div>
+  <br/>
+    <div class="row">
+      <div class="col-xs-12  col-md-12">
+        <div class="article">
+          <h2 style="text-align: center">Correlations Discovered Between Healthcare, Smoking, Obesity, Poverty, Age, and Household Income</h2>
+          <p style="text-align: left">There is a positive correlation between Lacks HealthCare vs In Poverty which is an expectation because
+          if large amount of people live in poverty there will be a lack in healthcare in these communities. There is a slight positive correlation 
+          between Smokes vs In Poverty but with more data it will give us a clearer picture. It seems there to be a linear correlation between Obese vs In Poverty
+          because most of the circle points hover between 28% to 32% for the Obese axis.</p>
+
+          <p style="text-align: left">A part that is common in Lacks Healthcare vs Age, Smokes vs Age, and Obese vs Household Income is the circle
+          points hover mainly between 36 to 40 age group. This is telling me the data that was collected were mainly people who fall between the 36 to 40 age group. 
+          To get a clearer picture if there is any correlations, there needs to be more data collected from different age groups.</p>
+
+          <p style="text-align: left">A common theme noticeable in Lacks Healthcare vs Household Income, Smokes vs Household Income, and Obese vs Household Income
+          is most of the household incomes that make less their circle point starts high but as the household incomes starts to increase the circle point
+          starts to move down.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>The Coding Boot Camp&copy;2016</p>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-tip/0.9.1/d3-tip.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+
+</body>
+
+</html>
